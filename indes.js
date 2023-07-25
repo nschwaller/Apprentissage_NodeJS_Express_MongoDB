@@ -53,6 +53,10 @@ app.get('/user', (req, res) => {
     res.send(text);
 });
 
+app.use((req, res) => {
+    res.status(404).send("Page non trouvée");
+});
+
 app.listen(port, () => {
     console.log(`Serveur lancé sur le port ${port}`);
 });
